@@ -6,6 +6,11 @@ import "./shop.css";
 export const Shop = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [selectedSort, setSelectedSort] = useState("lowest");
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
 
     const handlefilterChange = (e) => {
         setSelectedCategory(e.target.value);
@@ -16,6 +21,9 @@ export const Shop = () => {
     }
 
     const filteredProducts = PRODUCTS
+        .filter((product) => {
+            return product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+        })
         .filter((product) => {
             if (selectedCategory === "all") return true;
             return product.category === selectedCategory;
@@ -35,6 +43,10 @@ export const Shop = () => {
     return (
         <div className="shop">
             <div className="filters">
+                <div>
+                    <label htmlFor="search">Search: </label>
+                    <input type="text" id="search" placeholder="Enter a product" value={searchTerm} onChange={handleInputChange} />
+                </div>
                 <div className="shopFilter">
                     <label htmlFor="categories">Choose a category: </label>
                     <select id="categories" onChange={handlefilterChange}>
