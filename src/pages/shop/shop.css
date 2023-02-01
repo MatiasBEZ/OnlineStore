@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.shop {
+    min-height: 100vh;
+}
+
+.shopFilter {
+    margin: 20px;
+}
+
 .shopTitle {
     margin-top: 50px;
     text-align: center;
@@ -16,9 +24,6 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center; */
 }
 
 .product {
