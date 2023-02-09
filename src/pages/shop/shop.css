@@ -15,12 +15,6 @@
     gap: 20px;
 }
 
-.shopTitle {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 40px;
-}
-
 .products {
     width: 100%;
     height: auto;
@@ -60,7 +54,12 @@
     cursor: pointer;
 }
 
-.addToCartBttn {
+.addOrRemoveBttns {
+    display:flex;
+    gap: 5px;
+}
+
+.CartBttn {
     background-color: transparent;
     border: 2px solid rgb(19, 19, 19);
     display: flex;
@@ -72,7 +71,7 @@
     border-radius: 15px;
 }
 
-.addToCartBttn:hover {
+.CartBttn:hover {
     background-color: rgb(19, 19, 19);
     color: white;
     cursor: pointer;
