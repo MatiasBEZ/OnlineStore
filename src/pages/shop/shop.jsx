@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Slider from "../../components/Slider.jsx";
 import {PRODUCTS} from "../../products.js";
 import {Product} from "./product";
 import "./shop.css";
@@ -42,6 +43,7 @@ export const Shop = () => {
 
     return (
         <div className="shop">
+            <Slider />
             <div className="filters">
                 <div>
                     <label htmlFor="search">Search: </label>

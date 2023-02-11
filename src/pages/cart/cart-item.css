@@ -1,0 +1,17 @@
+.countHandler {
+    display: flex;
+    gap: 5px;
+    margin: 20px;
+}
+
+.countHandler input {
+    border: 1px solid rgb(139, 139, 139);
+    border-radius: 10%;
+}
+
+.btnCountHandler {
+    border: 1px solid rgb(139, 139, 139);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
