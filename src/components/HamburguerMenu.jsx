@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {List} from 'phosphor-react';
+import {Link} from "react-router-dom";
 import "./HamburguerMenu.css"
 
 function HamburguerMenu() {
@@ -17,17 +18,17 @@ function HamburguerMenu() {
                 </span>
             </button>
             <ul className={isOpen ? "menu-open" : "menu-closed"}>
-                <li>Home</li>
-                <li>About Us</li>
-                <li className="sub-menu">Products
+                <li><Link className="links" to="/">Home</Link></li>
+                <li><Link className="links" to="/about">About Us</Link></li>
+                <li className="sub-menu"><Link className="links" to="/">Products</Link>
                     <ul>
-                        <li>All</li>
+                        <li><Link className="links" to="/">All</Link></li>
                         <li>Tops</li>
                         <li>Bottoms</li>
                         <li>Accesories</li>
                     </ul>
                 </li>
-                <li>Contact</li>
+                <li><Link className="links" to="/contact">Contact</Link></li>
             </ul>
         </div>
     );
