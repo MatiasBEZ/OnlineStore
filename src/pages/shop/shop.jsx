@@ -53,8 +53,9 @@ export const Shop = () => {
                     <label htmlFor="categories">Choose a category: </label>
                     <select id="categories" onChange={handlefilterChange}>
                         <option value="all">All</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="fashion">Fashion</option>
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="accesories">Accesories</option>
                     </select>
                 </div>
                 <div className="sortBy">
