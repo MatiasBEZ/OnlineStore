@@ -3,9 +3,9 @@ import {PRODUCTS} from "../../products.js";
 import {Product} from "./product";
 import "./shop.css";
 
-export const Shop = () => {
-    const [selectedCategory, setSelectedCategory] = useState("all");
-    const [selectedSort, setSelectedSort] = useState("lowest");
+export const Shop = ({category, categoryOptions, sortOptions, sortDirection}) => {
+    const [selectedCategory, setSelectedCategory] = useState(category);
+    const [selectedSort, setSelectedSort] = useState(sortDirection);
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleInputChange = (e) => {
@@ -21,24 +21,22 @@ export const Shop = () => {
     }
 
     const filteredProducts = PRODUCTS
-        .filter((product) => {
-            return product.productName.toLowerCase().includes(searchTerm.toLowerCase())
-        })
-        .filter((product) => {
-            if (selectedCategory === "all") return true;
-            return product.category === selectedCategory;
-        })
-        .sort((a, b) => {
-            if (selectedSort === "lowest") {
-                if (a.price < b.price) return -1;
-                if (a.price > b.price) return 1;
-                return 0;
-            } else if (selectedSort === "highest") {
-                if (a.price > b.price) return -1;
-                if (a.price < b.price) return 1;
-                return 0;
-            }
-        })
+    .filter((product) => {
+        return product.productName.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+    .filter((product) => {
+        if (selectedCategory === "all") return true;
+        return product.category === selectedCategory;
+    })
+    .sort((a, b) => {
+        if (selectedSort === "lowest") {
+        return a.price - b.price;
+        } else if (selectedSort === "highest") {
+        return b.price - a.price;
+        } else {
+        return 0;
+        }
+    });
 
     return (
         <div className="shop">
@@ -50,17 +48,21 @@ export const Shop = () => {
                 <div className="shopFilter">
                     <label htmlFor="categories">Category: </label>
                     <select id="categories" onChange={handlefilterChange}>
-                        <option value="all">All</option>
-                        <option value="tops">Tops</option>
-                        <option value="bottoms">Bottoms</option>
-                        <option value="accesories">Accesories</option>
+                        {categoryOptions.map((option) => (
+                            <option value={option.value} key={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="sortBy">
                     <label htmlFor="sortOptions">SortBy: </label>
                     <select id="sortOptions" onChange={handleSortChange}>
-                        <option value="lowest">Lowest Price</option>
-                        <option value="highest">Highest Price</option>
+                        {sortOptions.map((option) => (
+                            <option value={option.value} key={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
                     </select>
                 </div>
             </div>

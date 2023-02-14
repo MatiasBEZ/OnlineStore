@@ -20,9 +20,9 @@ function HamburguerMenu() {
             <ul className={isOpen ? "menu-open" : "menu-closed"} onClick={toggleMenu}>
                 <li><Link className="links" to="/">Home</Link></li>
                 <li><Link className="links" to="/about">About Us</Link></li>
-                <li className="sub-menu"><Link className="links" to="/products">Products</Link>
+                <li className="sub-menu"><Link className="links" to="/products/all">Products</Link>
                     <ul>
-                        <li><Link className="links" to="/products">All</Link></li>
+                        <li><Link className="links" to="/products/all">All</Link></li>
                         <li><Link className="links" to="/products/tops">Tops</Link></li>
                         <li><Link className="links" to="/products/bottoms">Bottoms</Link></li>
                         <li><Link className="links" to="/products/accessories">Accessories</Link></li>

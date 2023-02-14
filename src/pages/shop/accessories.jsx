@@ -1,61 +1,17 @@
-import React, {useState} from "react";
-import {PRODUCTS} from "../../products.js";
-import {Product} from "./product";
-import "./shop.css";
+import React from "react";
+import {Shop} from "./shop";
 
 export const Accessories = () => {
-    const [selectedSort, setSelectedSort] = useState("lowest");
-    const [searchTerm, setSearchTerm] = useState("");
+    const sortOptions = [
+        {label: "Lowest Price", value: "lowest"},
+        {label: "Highest Price", value: "highest"},
+    ];
 
-    const handleInputChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const handleSortChange = (e) => {
-        setSelectedSort(e.target.value);
-    }
-
-    const filteredProducts = PRODUCTS
-        .filter((product) => {
-            return product.productName.toLowerCase().includes(searchTerm.toLowerCase())
-        })
-        .filter((product) => {
-            return product.category === "accesories";
-        })
-        .sort((a, b) => {
-            if (selectedSort === "lowest") {
-                if (a.price < b.price) return -1;
-                if (a.price > b.price) return 1;
-                return 0;
-            } else if (selectedSort === "highest") {
-                if (a.price > b.price) return -1;
-                if (a.price < b.price) return 1;
-                return 0;
-            }
-        })
+    const categoryOptions = [
+        {label: "Accessories", value: "accesories"},
+    ];
 
     return (
-        <div className="shop">
-            <div className="filters">
-                <div>
-                    <label htmlFor="search">Search: </label>
-                    <input type="text" id="search" placeholder="Enter a product" value={searchTerm} onChange={handleInputChange} />
-                </div>
-                <div className="sortBy">
-                    <label htmlFor="sortOptions">SortBy: </label>
-                    <select id="sortOptions" onChange={handleSortChange}>
-                        <option value="lowest">Lowest Price</option>
-                        <option value="highest">Highest Price</option>
-                    </select>
-                </div>
-            </div>
-            <div className="products">
-                {
-                    filteredProducts.map((product) =>
-                    (<Product data={product} key={product.id}/>)
-                    )
-                }
-            </div>
-        </div>
+        <Shop category="accesories" categoryOptions={categoryOptions} sortOptions={sortOptions} sortDirection="lowest" />
     );
 };
