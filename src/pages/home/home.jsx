@@ -1,9 +1,10 @@
 import React, {useState} from "react";
+import Slider from "../../components/Slider.jsx";
 import {PRODUCTS} from "../../products.js";
-import {Product} from "./product";
-import "./shop.css";
+import {Product} from "../shop/product";
+import "./home.css";
 
-export const Shop = () => {
+export const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [selectedSort, setSelectedSort] = useState("lowest");
     const [searchTerm, setSearchTerm] = useState("");
@@ -41,7 +42,8 @@ export const Shop = () => {
         })
 
     return (
-        <div className="shop">
+        <div className="shopHome">
+            <Slider/>
             <div className="filters">
                 <div>
                     <label htmlFor="search">Search: </label>

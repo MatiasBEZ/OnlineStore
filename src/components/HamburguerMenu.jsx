@@ -17,15 +17,15 @@ function HamburguerMenu() {
                     <List size={32} />
                 </span>
             </button>
-            <ul className={isOpen ? "menu-open" : "menu-closed"}>
+            <ul className={isOpen ? "menu-open" : "menu-closed"} onClick={toggleMenu}>
                 <li><Link className="links" to="/">Home</Link></li>
                 <li><Link className="links" to="/about">About Us</Link></li>
-                <li className="sub-menu"><Link className="links" to="/">Products</Link>
+                <li className="sub-menu"><Link className="links" to="/products">Products</Link>
                     <ul>
-                        <li><Link className="links" to="/">All</Link></li>
-                        <li>Tops</li>
-                        <li>Bottoms</li>
-                        <li>Accesories</li>
+                        <li><Link className="links" to="/products">All</Link></li>
+                        <li><Link className="links" to="/products/tops">Tops</Link></li>
+                        <li><Link className="links" to="/products/bottoms">Bottoms</Link></li>
+                        <li><Link className="links" to="/products/accessories">Accessories</Link></li>
                     </ul>
                 </li>
                 <li><Link className="links" to="/contact">Contact</Link></li>
