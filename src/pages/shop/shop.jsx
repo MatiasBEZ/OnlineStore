@@ -48,7 +48,7 @@ export const Shop = () => {
                     <input type="text" id="search" placeholder="Enter a product" value={searchTerm} onChange={handleInputChange} />
                 </div>
                 <div className="shopFilter">
-                    <label htmlFor="categories">Choose a category: </label>
+                    <label htmlFor="categories">Category: </label>
                     <select id="categories" onChange={handlefilterChange}>
                         <option value="all">All</option>
                         <option value="tops">Tops</option>

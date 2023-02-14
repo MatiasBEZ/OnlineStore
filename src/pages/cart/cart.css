@@ -17,6 +17,14 @@
     border-radius: 25px;
     margin: 30px;
   }
+
+  @media screen and (max-width: 600px) {
+    .cartItem {
+      width: 30vh;
+      height: auto;
+      flex-direction: column;
+    }
+  }
   
   .cartItem img {
     width: 200px;

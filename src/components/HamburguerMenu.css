@@ -41,6 +41,10 @@
     visibility: hidden;
 }
 
+.sub-menu {
+    margin-left: 18% !important;
+}
+
 .sub-menu ul {
     display: flex;
     flex-direction: column;
@@ -59,6 +63,10 @@
 
     .menu-open li {
         margin-left: 0;
+    }
+
+    .sub-menu {
+        margin-left: 0 !important;
     }
 
     .sub-menu ul{
