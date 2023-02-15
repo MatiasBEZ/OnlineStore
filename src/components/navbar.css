@@ -38,6 +38,21 @@
     font-size: 25px;
 }
 
+.cartCounter {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    right: 25px;
+    top: 35px;
+    width: 19px;
+    height: 19px;
+    line-height: 19px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
 @media  screen and (max-width: 600px) {
     .logo a {
         font-size: 2rem;
