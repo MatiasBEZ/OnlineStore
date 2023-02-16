@@ -22,6 +22,12 @@
     gap: 20px;
 }
 
+@media screen and (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+    }
+}
+
 .products {
     width: 100%;
     height: auto;
