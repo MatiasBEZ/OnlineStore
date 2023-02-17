@@ -1,4 +1,25 @@
 .contact-page {
     min-height: 100vh;
     padding-top: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-page h2 {
+    margin-top: 30px;
+}
+
+.leaflet-container {
+    width: 50vw;
+    height: 200px;
+    margin: 10px 50px 50px;
+}
+
+@media screen and (max-width:700px){
+    .leaflet-container {
+        width: 90vw;
+    } 
 }
